@@ -1,5 +1,3 @@
-
-
 const createTableSQL = `
 CREATE TABLE IF NOT EXISTS Student (
   id INT AUTO_INCREMENT PRIMARY KEY,

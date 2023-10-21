@@ -15,8 +15,22 @@ app.use(express.urlencoded({ extended: true }));
 
 
 // Import the models
-const studentModel = require('./models/student');
-studentModel.createTable(db);
+const models = [
+  require('./models/Coupon'),
+  require('./models/FoodItem'),
+  require('./models/FoodItemImage'),
+  require('./models/FoodItemReview'),
+  require('./models/Menu'),
+  require('./models/AnOrder'),
+  require('./models/OrderItem'),
+  require('./models/Restaurant'),
+  require('./models/RestaurantImage'),
+  require('./models/RestaurantReview'),
+  require('./models/User')
+];
+
+models.forEach(model => model.createTable(db));
+
 
 // Routers
 const studentRouter = require('./routes/student');
