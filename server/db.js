@@ -6,7 +6,7 @@ const pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
   password: 'wowpassword',
-  database: 'testingpuresql',
+  database: 'fooddb',
 });
 
 // Ensure a connection can be established before starting the app
