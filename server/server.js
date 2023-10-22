@@ -1,4 +1,5 @@
 const express = require('express');
+const { body, validationResult } = require('express-validator');
 const cors = require('cors');
 const db = require('./db'); // Import the database connection from db.js
 
@@ -26,15 +27,21 @@ const models = [
   require('./models/Restaurant'),
   require('./models/RestaurantImage'),
   require('./models/RestaurantReview'),
-  require('./models/User')
+  require('./models/User'),
+  require('./models/TokenBlacklist')
 ];
-
 models.forEach(model => model.createTable(db));
 
 
+
 // Routers
-const studentRouter = require('./routes/student');
-app.use('/student', studentRouter);
+app.use('/user', require('./routes/User'));
+
+
+
+
+
+
 
 // Define a route for the root URL
 app.get('/', (req, res) => {

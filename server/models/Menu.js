@@ -1,5 +1,5 @@
 const createTableSQL = `
-CREATE TABLE Menu (
+CREATE TABLE IF NOT EXISTS Menu (
     id INT AUTO_INCREMENT PRIMARY KEY,
     restaurant_id INT,
     category VARCHAR(255),
